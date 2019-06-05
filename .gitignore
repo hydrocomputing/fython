@@ -1,0 +1,6 @@
+*.py[cod]
+*.so
+*.so.*
+.ipynb_checkpoints/**
+.vscode/
+*.mod
