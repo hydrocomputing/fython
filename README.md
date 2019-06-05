@@ -1,4 +1,4 @@
-# fython
+# Fython
 
 ## Mixed Python and Fortran programming
 
