@@ -1,0 +1,27 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module callback_test__user__routines 
+    interface callback_test_user_interface 
+        subroutine cback ! in :fython_test:callback.f90:callback_test:unknown_interface
+        end subroutine cback
+    end interface callback_test_user_interface
+end python module callback_test__user__routines
+python module fython_test ! in 
+    interface  ! in :fython_test
+        subroutine callback_test(cback) ! in :fython_test:callback.f90
+            use callback_test__user__routines
+            external cback
+        end subroutine callback_test
+        subroutine increase ! in :fython_test:increase.f90
+            use mod_data
+        end subroutine increase
+        module mod_data ! in :fython_test:data_mod.f90
+            real, optional :: number1=0.0
+            integer, optional :: number2=1
+        end module mod_data
+    end interface 
+end python module fython_test
+
+! This file was auto-generated with f2py (version:2).
+! See http://cens.ioc.ee/projects/f2py2e/
